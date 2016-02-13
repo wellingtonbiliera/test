@@ -6,6 +6,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Boas Vindas</title>
 </head>
+<script type="text/javascript">
+	function searchAjax() {
+		var data = {}
+		data["query"] = $("#query").val();
+
+		$.ajax({
+			type : "POST",
+			contentType : "application/json",
+			url : "${home}search/api/getSearchResult",
+			data : JSON.stringify(data),
+			dataType : 'json',
+			timeout : 100000,
+			success : function(data) {
+				console.log("SUCCESS: ", data);
+				display(data);
+			},
+			error : function(e) {
+				console.log("ERROR: ", e);
+				display(e);
+			},
+			done : function(e) {
+				console.log("DONE");
+			}
+		});
+	}
+</script>
 <body>
 	<center>
 		<h2>${mensagem}</h2>
