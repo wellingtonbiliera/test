@@ -5,28 +5,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script src="jquery-1.12.0.min.js"></script>
-<title>Insert title here</title>
+<title>Cadastro Simples</title>
 
 </head>
 <body>
 	<center>
 
-		<b>Being Java Guys | Registration Form </b>
+		<b>Cadastro</b>
 
 		<script>
 			function doAjaxPost() {
 
-				var name = $('#name').val();
-				var gender = $('#gender').val();
-				var email = $('#email').val();
-				var phone = $('#phone').val();
+				var nmPessoa = $('#nmPessoa').val();
+				var cdSexo = $('#cdSexo').val();
+				var nmEmail = $('#nmEmail').val();
+				var cdCidade = $('#cdCidade').val();
 				var city = $('#city').val();
 
 				$.ajax({
 					type : "Get",
 					url : "hello.html",
-					data : "name=" + name + "&gender=" + gender + "&email="
-							+ email + "&phone=" + phone + "&city=" + city,
+					data : "nmPessoa=" + nmPessoa + "&cdSexo=" + cdSexo + "&nmEmail="
+							+ nmEmail + "&cdCidade=" + cdCidade + "&inTrabalha=" + inTrabalha,
 					success : function(response) {
 						alert(response);
 					},
@@ -40,30 +40,32 @@
 			<form method="get">
 				<table>
 					<tr>
-						<td>Name :</td>
-						<td><input type="text" id="name" /></td>
+						<td>Nome :</td>
+						<td><input type="text" id="nmPessoa" /></td>
 					</tr>
 					<tr>
-						<td>Gender :</td>
-						<td><input type="radio" id="gender" value="male" /> Male <input
-							type="radio" id="gender" value="female" /> Female</td>
+						<td>Seco :</td>
+						<td><input type="radio" id="cdSexo" value="M" /> Masculino <input
+							type="radio" id="cdSexo" value="F" /> Feminino</td>
 					</tr>
 					<tr>
 						<td>Email :</td>
-						<td><input type="text" id="email" /></td>
+						<td><input type="text" id="nmEmail" /></td>
 					</tr>
 					<tr>
-						<td>Phone :</td>
-						<td><input type="text" id="phone" /></td>
-					</tr>
-					<tr>
-						<td>City :</td>
-						<td><select id="city"><option value="noida">Noida</option>
-								<option value="delhi">Delhi</option>
-								<option value="gurgaon">Gurgaon</option>
-								<option value="others">Others</option>
+						<td>Cidade :</td>
+						<td><select id="cdCidade"><option value="SP">São Paulo</option>
+								<option value="RJ">Rio de Janeiro</option>
+								<option value="BH">Belo Horizonte</option>
+								<option value="OT">Outros</option>
 						</select></td>
 					</tr>
+					
+					<tr>
+						<td>Trabalhando :</td>
+						<td><input type="checkbox" id="inTrabalha" /></td>
+					</tr>
+					
 					<tr>
 						<td></td>
 						<td><input type="button" value="Save" onclick="doAjaxPost();" />
