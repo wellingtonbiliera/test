@@ -3,6 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>fiveware-test-model</artifactId>
 	<name>Test Model</name>
+	<packaging>jar</packaging>
 	<parent>
 		<groupId>org.fiveware</groupId>
 		<artifactId>fiveware-test</artifactId>
