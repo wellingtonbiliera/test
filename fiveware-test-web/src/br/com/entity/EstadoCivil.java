@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-public class Cidade {
+public class EstadoCivil {
 	
 	@Id 
 	@GeneratedValue

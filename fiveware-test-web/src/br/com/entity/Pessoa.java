@@ -28,7 +28,7 @@ public class Pessoa {
 	
 	@Getter	@Setter
 	@ManyToOne(fetch = FetchType.EAGER)
-	private Cidade cidade;
+	private EstadoCivil cidade;
 
 	public Pessoa() {
 	}
