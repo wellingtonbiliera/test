@@ -10,7 +10,7 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 
 		<!-- entidade mapeada -->
-		<class>br.com.caelum.tarefas.modelo.Tarefa</class>
+		<class>br.com.entity.Pessoa</class>
 
 		<properties>
 			<!-- dados da conexao -->
