@@ -1,4 +1,4 @@
-package br.com.controller;
+package br.com.conf;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

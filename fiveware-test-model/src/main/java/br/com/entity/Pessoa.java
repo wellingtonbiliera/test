@@ -20,8 +20,14 @@ public class Pessoa implements Serializable {
 	@Column(name = "nm_pessoa")
 	private String nmPessoa;
 
-	@Column(name = "cd_estado_civil")
-	private Integer cdEstadoCivil;
+	@Column(name = "cd_sexo")
+	private String cdSexo;
+
+	@Column(name = "nm_email")
+	private String nmEmail;
+
+	@Column(name = "in_trabalha")
+	private Boolean inTrabalha;
 
 	public Pessoa() {
 	}
@@ -42,12 +48,28 @@ public class Pessoa implements Serializable {
 		this.nmPessoa = nmPessoa;
 	}
 
-	public Integer getCdEstadoCivil() {
-		return cdEstadoCivil;
+	public String getCdSexo() {
+		return cdSexo;
 	}
 
-	public void setCdEstadoCivil(Integer cdEstadoCivil) {
-		this.cdEstadoCivil = cdEstadoCivil;
+	public void setCdSexo(String cdSexo) {
+		this.cdSexo = cdSexo;
+	}
+
+	public String getNmEmail() {
+		return nmEmail;
+	}
+
+	public void setNmEmail(String nmEmail) {
+		this.nmEmail = nmEmail;
+	}
+
+	public Boolean getInTrabalha() {
+		return inTrabalha;
+	}
+
+	public void setInTrabalha(Boolean inTrabalha) {
+		this.inTrabalha = inTrabalha;
 	}
 
 }
