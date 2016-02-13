@@ -4,8 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>fiveware-test-service</groupId>
 	<artifactId>fiveware-test-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-
+	
+	<parent>
+		<groupId>org.fiveware</groupId>
+		<artifactId>fiveware-test</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
@@ -62,7 +66,7 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.0.4</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-annotations</artifactId>
@@ -92,6 +96,6 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.5.10</version>
 		</dependency>
-		
+
 	</dependencies>
 </project>

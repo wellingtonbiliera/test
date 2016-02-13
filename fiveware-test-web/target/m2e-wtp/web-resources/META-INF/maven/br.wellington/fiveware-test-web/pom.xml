@@ -3,8 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.wellington</groupId>
 	<artifactId>fiveware-test-web</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
+	<parent>
+		<groupId>org.fiveware</groupId>
+		<artifactId>fiveware-test</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
