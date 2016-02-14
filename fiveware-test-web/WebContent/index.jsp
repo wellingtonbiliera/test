@@ -24,6 +24,7 @@
 			function doAjaxPost() {
 
 				var nmPessoa = $('#nmPessoa').val();
+				var cdEstadoCivil = $('#cdEstadoCivil').val();
 				var cdSexo = $('#cdSexo').val();
 				var nmEmail = $('#nmEmail').val();
 				var cdCidade = $('#cdCidade').val();
@@ -32,7 +33,7 @@
 				$.ajax({
 					type : "Get",
 					url : "save.html",
-					data : "nmPessoa=" + nmPessoa + "&cdSexo=" + cdSexo
+					data : "nmPessoa=" + nmPessoa + "&cdEstadoCivil=" + cdEstadoCivil + "&cdSexo=" + cdSexo
 							+ "&nmEmail=" + nmEmail + "&cdCidade=" + cdCidade
 							+ "&inTrabalha=" + inTrabalha,
 					success : function(response) {
@@ -66,7 +67,12 @@
 						<td><input type="text" id="nmPessoa" /></td>
 					</tr>
 					<tr>
-						<td>Seco :</td>
+						<td>Estado Civil :</td>
+						<td><input type="radio" id="cdEstadoCivil" value="1" /> Casado <input
+							type="radio" id="cdEstadoCivil" value="2" /> Solteiro</td>
+					</tr>
+					<tr>
+						<td>Sexo :</td>
 						<td><input type="radio" id="cdSexo" value="M" /> Masculino <input
 							type="radio" id="cdSexo" value="F" /> Feminino</td>
 					</tr>

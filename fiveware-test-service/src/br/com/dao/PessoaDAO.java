@@ -24,8 +24,14 @@ public class PessoaDAO extends PadraoDAO {
 
 	@SuppressWarnings("unchecked")
 	public List<Pessoa> buscaTodos() {
-		Query query = manager.createNamedQuery("buscaTodos");
-		return query.getResultList();
+		manager.getTransaction().begin();
+		
+		Query query = manager.createNativeQuery("select p.* from tb_pessoa p");
+		List<Pessoa> itens = query.getResultList();
+		
+		manager.getTransaction().commit();
+		
+		return itens;
 	}
 
 }

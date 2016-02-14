@@ -22,12 +22,14 @@ public class CrudSimples {
 
 	@RequestMapping(value = "/save", method = RequestMethod.GET)
 	public @ResponseBody String save(@RequestParam(value = "nmPessoa") String nmPessoa,
-			@RequestParam(value = "cdSexo") String cdSexo, @RequestParam(value = "nmEmail") String nmEmail,
-			@RequestParam(value = "cdCidade") String cdCidade, @RequestParam(value = "inTrabalha") Boolean inTrabalha) {
+			@RequestParam(value = "cdEstadoCivil") String cdEstadoCivil, @RequestParam(value = "cdSexo") String cdSexo,
+			@RequestParam(value = "nmEmail") String nmEmail, @RequestParam(value = "cdCidade") String cdCidade,
+			@RequestParam(value = "inTrabalha") Boolean inTrabalha) {
 
 		Pessoa p = new Pessoa();
 
 		p.setNmPessoa(nmPessoa);
+		p.setCdEstadoCivil(cdEstadoCivil);
 		p.setCdSexo(cdSexo);
 		p.setNmEmail(nmEmail);
 		p.setInTrabalha(inTrabalha);
@@ -40,7 +42,8 @@ public class CrudSimples {
 
 	@RequestMapping(value = "listaItens", method = RequestMethod.GET)
 	public List<Pessoa> lista() {
-		return service.buscaTodos();
+		List<Pessoa> itens = service.buscaTodos();
+		return itens;
 	}
 
 }
