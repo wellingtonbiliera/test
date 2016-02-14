@@ -5,10 +5,12 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_pessoa")
+@NamedQuery(name = "buscaTodos", query = "select p from Pessoa p")
 public class Pessoa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
