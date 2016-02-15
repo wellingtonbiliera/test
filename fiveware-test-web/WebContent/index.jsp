@@ -20,9 +20,10 @@
 
 		<script>
 			window.load(doBuscaTodos());
-			
-			function doAjaxPost() {
 
+			function doAjaxPost() {
+				
+				var cdPessoa = $('#cdPessoa').val();
 				var nmPessoa = $('#nmPessoa').val();
 				var cdEstadoCivil = $('#cdEstadoCivil').val();
 				var cdSexo = $('#cdSexo').val();
@@ -33,23 +34,10 @@
 				$.ajax({
 					type : "Get",
 					url : "save.html",
-					data : "nmPessoa=" + nmPessoa + "&cdEstadoCivil=" + cdEstadoCivil + "&cdSexo=" + cdSexo
-							+ "&nmEmail=" + nmEmail + "&cdCidade=" + cdCidade
+					data : "cdPessoa=" + cdPessoa + "&nmPessoa=" + nmPessoa + "&cdEstadoCivil="
+							+ cdEstadoCivil + "&cdSexo=" + cdSexo + "&nmEmail="
+							+ nmEmail + "&cdCidade=" + cdCidade
 							+ "&inTrabalha=" + inTrabalha,
-					success : function(response) {
-						alert(response);
-					},
-					error : function(e) {
-						alert('Error: ' + e);
-					}
-				});
-			}
-			
-			function doBuscaTodos() {
-
-				$.ajax({
-					type : "Get",
-					url : "listaItens.html",
 					success : function(response) {
 						alert(response);
 					},
@@ -63,18 +51,23 @@
 			<form method="get">
 				<table>
 					<tr>
+						<td>codigo :</td>
+						<td><input type="text" id="cdPessoa" /></td>
+					</tr>
+					<tr>
 						<td>Nome :</td>
 						<td><input type="text" id="nmPessoa" /></td>
 					</tr>
 					<tr>
 						<td>Estado Civil :</td>
-						<td><input type="radio" id="cdEstadoCivil" value="1" /> Casado <input
-							type="radio" id="cdEstadoCivil" value="2" /> Solteiro</td>
+						<td><input name="cdEstadoCivil" type="radio" id="cdEstadoCivil" value="1" />	Casado 
+						    <input name="cdEstadoCivil" type="radio" id="cdEstadoCivil" value="2" />	Solteiro
+						</td>
 					</tr>
 					<tr>
 						<td>Sexo :</td>
-						<td><input type="radio" id="cdSexo" value="M" /> Masculino <input
-							type="radio" id="cdSexo" value="F" /> Feminino</td>
+						<td><input name="cdSexo" type="radio" id="cdSexo" value="M" /> Masculino 
+						    <input name="cdSexo"type="radio" id="cdSexo" value="F" /> Feminino</td>
 					</tr>
 					<tr>
 						<td>Email :</td>
@@ -103,38 +96,6 @@
 				</table>
 
 			</form>
-			<table>
-				<c:if test="${fn:length(pessoaList) > 0 }">
-					<table id="idTbPessoa">
-						<thead>
-							<tr>
-								<th>codigo</th>
-								<th>Nome</th>
-								<th>Sexo</th>
-								<th>email</th>
-								<th>Trabalha</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							<c:forEach items="${pessoaList}" var="item">
-								<tr>
-									<td>${item.cdPessoa}</td>
-									<td>${item.sexo.nmPessoa}</td>
-									<td>${item.estadoCivil.cdSexo}</td>
-									<td>${item.nmEmail}</td>
-									<c:if test="${item.inTrabalha}">
-										<td>SIM</td>
-									</c:if>
-									<c:if test="${not item.inTrabalha}">
-										<td>NÃO</td>
-									</c:if>
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
-				</c:if>
-			</table>
 		</div>
 	</center>
 </body>

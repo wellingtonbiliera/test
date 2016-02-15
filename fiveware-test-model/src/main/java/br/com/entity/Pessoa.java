@@ -4,8 +4,6 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,7 +14,6 @@ public class Pessoa implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "cd_pessoa")
 	private Integer cdPessoa;
 
@@ -24,7 +21,7 @@ public class Pessoa implements Serializable {
 	private String nmPessoa;
 
 	@Column(name = "cd_estado_civil")
-	private String cdEstadoCivil;
+	private Integer cdEstadoCivil;
 
 	@Column(name = "cd_sexo")
 	private String cdSexo;
@@ -54,11 +51,11 @@ public class Pessoa implements Serializable {
 		this.nmPessoa = nmPessoa;
 	}
 
-	public String getCdEstadoCivil() {
+	public Integer getCdEstadoCivil() {
 		return cdEstadoCivil;
 	}
 
-	public void setCdEstadoCivil(String cdEstadoCivil) {
+	public void setCdEstadoCivil(Integer cdEstadoCivil) {
 		this.cdEstadoCivil = cdEstadoCivil;
 	}
 
