@@ -93,6 +93,7 @@
 						<td><input type="button" value="Save" onclick="doAjaxPost();" />
 						</td>
 					</tr>
+					
 				</table>
 
 			</form>
